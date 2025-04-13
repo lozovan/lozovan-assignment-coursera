@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-chicken: #d59898;
+  --bg-beef: #c14543;
+  --bg-sushi: #e5d198;
+  --main-color-text: #ffffff;
+  --main-color: #000000;
+  --main-font-family: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: var(--main-font-family);
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.main__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.box {
+  border: 1px solid var(--main-color);
+  background-color: #d3d3d3;
+  padding: 40px 20px 20px 20px;
+  position: relative;
+}
+
+.box-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 15px;
+  font-weight: bold;
+  border: 1px solid var(--main-color);
+  text-transform: uppercase;
+}
+
+.chicken .box-title {
+  background-color: var(--bg-chicken);
+}
+
+.beef .box-title {
+  background-color: var(--bg-beef);
+  color: var(--main-color-text);
+}
+
+.sushi .box-title {
+  background-color: var(--bg-sushi);
+}
+
+/* --- Desktop size  --- */
+@media (min-width: 992px) {
+  .box {
+    width: calc(33.33% - 13.33px); 
+  }
+}
+
+/* --- Tablet --- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .box {
+    width: calc(50% - 10px);
+  }
+
+  .box:nth-child(3) {
+    width: 100%;
+  }
+}
+
+/* --- Mobile --- */
+@media (max-width: 767px) {
+  .box {
+    width: 100%;
+  }
+}
